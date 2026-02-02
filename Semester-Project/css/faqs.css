@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f9f9fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.faq-wrapper {
+    width: 100%;
+    max-width: 800px;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-header h1 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.faq-header p {
+    color: #666;
+}
+
+/* --- Accordion Logic --- */
+.faq-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.faq-item {
+    border-bottom: 1px solid #eee;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item input[type="checkbox"] {
+    display: none; /* Hide the actual checkbox */
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #fcfcfc;
+}
+
+.faq-question i {
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+    color: #ff6b6b;
+}
+
+/* --- Answer Reveal --- */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    background: #fff;
+    padding: 0 30px;
+}
+
+.faq-answer p {
+    padding-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Checkbox State (Checked) */
+.faq-item input:checked ~ .faq-answer {
+    max-height: 200px; /* Adjust if answers are very long */
+    padding-top: 5px;
+}
+
+.faq-item input:checked ~ .faq-question i {
+    transform: rotate(45deg); /* Turns plus into an 'x' */
+}
+
+/* --- Bottom Links --- */
+.faq-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.faq-footer p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.faq-footer a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-home {
+    display: inline-block;
+    border: 2px solid #ff6b6b;
+    padding: 8px 25px;
+    border-radius: 25px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    background: #ff6b6b;
+    color: #fff !important;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 15px; /* Less padding on the sides */
+    }
+
+    .faq-header h1 {
+        font-size: 1.8rem; /* Smaller title so it doesn't wrap weirdly */
+    }
+
+    .faq-header p {
+        font-size: 0.9rem;
+    }
+
+    .faq-question {
+        padding: 15px 20px; /* Smaller clickable area */
+        font-size: 0.95rem; /* Slightly smaller text */
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+    }
+
+    .faq-answer p {
+        font-size: 0.85rem; /* Easier to read on small screens */
+    }
+
+    .back-home {
+        width: 100%; /* Makes the button easy to tap with a thumb */
+        text-align: center;
+    }
+}

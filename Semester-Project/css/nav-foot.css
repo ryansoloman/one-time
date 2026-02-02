@@ -1,0 +1,415 @@
+.navbar {
+    background: #ffffff;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* position: sticky; */
+    top: 0;
+    z-index: 1000;
+}
+
+/* This class gets added by JS after 450px scroll */
+.navbar.nav-sticky-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #ffffff;
+    /* Keeps your original white solid look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    /* Triggers the entrance animation */
+    animation: navSlideDown 0.4s ease forwards;
+}
+
+/* The animation that slides it from the top */
+@keyframes navSlideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #222;
+}
+
+.logo span {
+    color: #ff6b6b;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative;
+    /* Dropdown placement ke liye zaroori */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.active {
+    color: #ff6b6b;
+}
+
+.nav-links i {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* --- Dropdown Pop-up Styling --- */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 200px;
+    list-style: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu li {
+    margin: 0 !important;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown-menu a i {
+    margin-right: 10px;
+    color: #ff6b6b;
+}
+
+.dropdown-menu a:hover {
+    background: #fff5f5;
+    color: #ff6b6b;
+    padding-left: 25px;
+}
+
+/* Hover effect to show pop-up */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-icons>#search {
+    font-size: 18px;
+    cursor: text;
+    color: #333;
+}
+
+.nav-icons a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    position: relative;
+}
+
+.cart-count {
+    background: #ff6b6b;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+/* Tablet aur Mobile responsive navbar */
+@media screen and (max-width: 992px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .nav-container {
+        width: 95%;
+    }
+}
+
+/* --- Footer Styling --- */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 60px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.footer-col h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-col h3 span {
+    color: #ff6b6b;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-col h4::after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background: #ff6b6b;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #bbb;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #ff6b6b;
+    padding-left: 5px;
+}
+
+/* Social & Newsletter */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    background: #444;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: #ff6b6b;
+}
+
+.newsletter {
+    display: flex;
+    margin-top: 15px;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    width: 70%;
+}
+
+.newsletter button {
+    padding: 10px 15px;
+    border: none;
+    background: #ff6b6b;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Icons styling fix */
+.menu-toggle {
+    display: none;
+    margin-left: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    /* background: #000; */
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive */
+@media (min-width: 993px) {
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        display: block;
+        /* Ensure it shows on desktop hover */
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.4s;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        display: block;
+        /* Flex se block kar diya vertical ke liye */
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: inline;
+    }
+
+    /* Mobile Dropdown Categories */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        transform: none;
+        display: none;
+        /* Keep hidden by default on mobile */
+        background: #f9f9f9;
+        width: 100%;
+    }
+
+    /* Footer Responsive logic  */
+    .footer-col {
+        flex: 100%;
+        text-align: center;
+    }
+
+}
+
+/* Hide the mobile-specific search by default */
+.mobile-search {
+    display: none;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.mobile-search .search-input-unicode {
+    width: 100%;
+    /* Make it full width inside the menu */
+}
+
+
+
+/* Logic for screens below 450px */
+@media screen and (max-width: 450px) {
+
+    /* Hide the search bar in the top navbar */
+    .nav-icons .search-input-unicode {
+        display: none;
+    }
+
+    /* Show the search bar inside the mobile dropdown menu */
+    .mobile-search {
+        display: block;
+    }
+
+    /* Optional: Adjust logo size slightly if needed */
+    .logo a {
+        font-size: 20px;
+    }
+}

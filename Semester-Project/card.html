@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Css/card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="card">
+        <div class="discount-drawer" id="discountDrawer">
+            <div class="drawer-header">
+                <span>Exclusive Discounted Prices</span>
+                <button class="close-btn" onclick="toggleDrawer()">✕</button>
+            </div>
+            <ul class="discount-list">
+                <li><span>Buy 1 for <strong> </strong></span> <small> </small></li>
+                <li><span>Buy 10 for <strong> </strong></span> <small> </small></li>
+                <li><span>Buy 20 for <strong> </strong></span> <small> </small></li>
+                <li><span>Buy 50 for <strong> </strong></span> <small> </small></li>
+            </ul>
+        </div>
+        <div class="product-name">
+            <span class="badge">Dummy Text </span>
+            <div class="product-image">
+                <img src="./media/nathan-fertig-FBXuXp57eM0-unsplash.jpg" alt="">
+            </div>
+        </div>
+        <div class="product-info">
+            <p class="title">Dummy Text</p>
+            <div class="price-row">
+                <span class="price">Rs</span>
+                <span class="rating"> Dummy ★</span>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="qty-selector">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+            <button class="cart-btn"><i class="fa-regular fa-cart-arrow-down"></i></button>
+        </div>
+
+        <button class="toggle-trigger" onclick="toggleDrawer()">
+            Exclusive Discounted Prices <span>↑</span>
+        </button>
+    </div>
+
+    <script src="./js/card.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Aeron Ergonomic",
+        "type": "standard",
+        "price": 299,
+        "image": "./media/chair1.jpg",
+        "tag": "Best Seller"
+    },
+    {
+        "id": 2,
+        "name": "Royal Velvet Throne",
+        "type": "tall",
+        "price": 850,
+        "image": "./media/chair2.jpg",
+        "tag": "Luxury"
+    },
+    {
+        "id": 3,
+        "name": "Pro Gaming X",
+        "type": "offer",
+        "price": 199,
+        "oldPrice": 350,
+        "image": "./media/chair3.jpg",
+        "deadline": "2026-02-15T00:00:00"
+    }
+]
