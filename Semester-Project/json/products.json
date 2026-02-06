@@ -1,27 +1,16 @@
 [
-    {
-        "id": 1,
-        "name": "Aeron Ergonomic",
-        "type": "standard",
-        "price": 299,
-        "image": "./media/chair1.jpg",
-        "tag": "Best Seller"
-    },
-    {
-        "id": 2,
-        "name": "Royal Velvet Throne",
-        "type": "tall",
-        "price": 850,
-        "image": "./media/chair2.jpg",
-        "tag": "Luxury"
-    },
-    {
-        "id": 3,
-        "name": "Pro Gaming X",
-        "type": "offer",
-        "price": 199,
-        "oldPrice": 350,
-        "image": "./media/chair3.jpg",
-        "deadline": "2026-02-15T00:00:00"
-    }
+  {
+    "name": "Harvest Vase",
+    "author": "by studio and friends",
+    "description": "Harvest Vases are a reinterpretation of peeled fruits and vegetables as functional objects.",
+    "price": "78",
+    "image": "https://i.postimg.cc/W30ZbJym/product-img.png"
+  },
+  {
+    "name": "Cedar Bowl",
+    "author": "by woodworks inc",
+    "description": "Hand-carved cedar bowls perfect for any rustic dining setting.",
+    "price": "45",
+    "image": "https://via.placeholder.com/327x420"
+  }
 ]

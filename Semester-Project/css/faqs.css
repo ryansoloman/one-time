@@ -1,169 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+:root {
+    --accent: #d4a373;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --blur: 25px;
+}
 
+/* --- BASE STYLES --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background: #f9f9fb;
+    background-color: #0a0a0a;
+    color: white;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 40px 20px;
+    padding: 80px 20px;
+    background-image: radial-gradient(circle at 50% -20%, rgba(212, 163, 115, 0.1) 0%, transparent 40%);
 }
 
 .faq-wrapper {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .faq-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .faq-header h1 {
-    font-size: 2.5rem;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.faq-header p {
-    color: #666;
-}
-
-/* --- Accordion Logic --- */
-.faq-container {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    overflow: hidden;
-}
-
-.faq-item {
-    border-bottom: 1px solid #eee;
-}
-
-.faq-item:last-child {
-    border-bottom: none;
-}
-
-.faq-item input[type="checkbox"] {
-    display: none; /* Hide the actual checkbox */
-}
-
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
-    font-weight: 600;
-    color: #333;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.faq-question:hover {
-    background: #fcfcfc;
-}
-
-.faq-question i {
-    font-size: 0.8rem;
-    transition: transform 0.3s;
-    color: #ff6b6b;
-}
-
-/* --- Answer Reveal --- */
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    background: #fff;
-    padding: 0 30px;
-}
-
-.faq-answer p {
-    padding-bottom: 20px;
-    color: #555;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-/* Checkbox State (Checked) */
-.faq-item input:checked ~ .faq-answer {
-    max-height: 200px; /* Adjust if answers are very long */
-    padding-top: 5px;
-}
-
-.faq-item input:checked ~ .faq-question i {
-    transform: rotate(45deg); /* Turns plus into an 'x' */
-}
-
-/* --- Bottom Links --- */
-.faq-footer {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.faq-footer p {
-    font-size: 0.9rem;
-    color: #666;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: -1px;
     margin-bottom: 15px;
 }
 
-.faq-footer a {
-    color: #ff6b6b;
-    text-decoration: none;
-    font-weight: 600;
+.faq-header p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
 }
 
-.back-home {
-    display: inline-block;
-    border: 2px solid #ff6b6b;
-    padding: 8px 25px;
-    border-radius: 25px;
-    margin-top: 10px;
+/* --- ACCORDION SYSTEM --- */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.faq-item:hover {
+    border-color: rgba(212, 163, 115, 0.4);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.faq-item input {
+    display: none;
+}
+
+.faq-question {
+    padding: 25px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
     transition: 0.3s;
 }
 
-.back-home:hover {
-    background: #ff6b6b;
-    color: #fff !important;
+.faq-question i {
+    font-size: 0.9rem;
+    color: var(--accent);
+    transition: 0.4s;
 }
 
-/* --- Mobile Responsiveness --- */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 35px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Logic for opening */
+.faq-item input:checked~.faq-answer {
+    max-height: 300px;
+    padding-bottom: 30px;
+}
+
+.faq-item input:checked~.faq-question {
+    color: var(--accent);
+}
+
+.faq-item input:checked~.faq-question i {
+    transform: rotate(180deg);
+}
+
+/* --- FOOTER LINKS --- */
+.faq-footer {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.faq-footer p {
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 20px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.faq-btn {
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.contact-btn {
+    background: var(--accent);
+    color: white;
+}
+
+.back-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--glass-border);
+}
+
+.faq-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
 @media (max-width: 600px) {
-    body {
-        padding: 20px 15px; /* Less padding on the sides */
-    }
-
-    .faq-header h1 {
-        font-size: 1.8rem; /* Smaller title so it doesn't wrap weirdly */
-    }
-
-    .faq-header p {
-        font-size: 0.9rem;
-    }
-
     .faq-question {
-        padding: 15px 20px; /* Smaller clickable area */
-        font-size: 0.95rem; /* Slightly smaller text */
+        padding: 20px;
+        font-size: 1rem;
     }
 
     .faq-answer {
         padding: 0 20px;
     }
 
-    .faq-answer p {
-        font-size: 0.85rem; /* Easier to read on small screens */
-    }
-
-    .back-home {
-        width: 100%; /* Makes the button easy to tap with a thumb */
-        text-align: center;
+    .btn-group {
+        flex-direction: column;
     }
 }

@@ -13,154 +13,136 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="#">CHAIR<span>HUB</span></a>
-            </div>
+    <nav class="sidebar" id="sidebar">
+        <a href="#" class="logo">CHAIR<span>CO.</span></a>
 
-            <ul class="nav-links" id="navMenu">
-                <li class="mobile-search">
-                    <input type="search" placeholder="Search..." class="search-input-unicode">
-                </li>
-                <li><a href="./index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Collections <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Office Chairs</a></li>
-                        <li><a href="#">Luxury Sofas</a></li>
-                        <li><a href="#">Gaming Chairs</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Best Sellers</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
+        <div class="burger-icon" id="menuBtn">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                stroke-linecap="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </div>
 
-            <div class="nav-icons">
-                <input type="search" placeholder="Search..." class="search-input-unicode">
-                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
+        <ul class="nav-links">
+            <li class="nav-item" style="--i:1"><a href="./index.html" class="nav-link">Home</a></li>
+            <li class="nav-item" style="--i:2"><a href="./furniture.html" class="nav-link">Furniture</a></li>
+            <li class="nav-item" style="--i:3"><a href="./aboutus.html" class="nav-link">About Us</a></li>
+            <li class="nav-item" style="--i:4"><a href="./contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="auth-group">
+            <a href="./login.html" class="login-btn">Log In</a>
+            <a href="./signup.html" class="signup-btn">Sign Up</a>
         </div>
     </nav>
 
-    <section class="about-hero">
-        <div class="container">
-            <h1>The Richfield Standard</h1>
-            <p>Crafting the seat of comfort since 1998.</p>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <div class="contact-container">
-        <div class="contact-form-section">
-            <h1>Contact us</h1>
-            <p class="subtitle">We're open for any suggestion or just to have a chat</p>
+        <div class="header-area">
+            <h1>Contact Our Studio</h1>
+        </div>
 
-            <div class="contact-info">
-                <div>
-                    <strong>ADDRESS:</strong><br>
-                    Suite 721 Centre, Clifton<br>
-                    Karachi Kr 75600
+        <div class="contact-grid">
+            <div class="info-card">
+                <div class="info-item">
+                    <h3>Headquarters</h3>
+                    <p>562 Sahrae Faisal,<br>Build 17<br>Karachi, Kr 55596</p>
                 </div>
-                <div>
-                    <strong>EMAIL:</strong><br>
-                    proviperx0@gmail.com
+
+                <div class="info-item">
+                    <h3>Direct Lines</h3>
+                    <a href="mailto:concierge@chairco.com" class="email-link">proviperx0@gmail.com</a>
+                    <p style="margin-top: 8px;">Office: +92 (332) 568-6349</p>
                 </div>
-                <div>
-                    <strong>PHONE:</strong><br>
-                    + 9233 2568 6349
+
+                <div class="info-item">
+                    <h3>Socials</h3>
+                    <p>Instagram / Youtube / Twiter</p>
                 </div>
             </div>
 
-            <form id="contactForm">
-                <div class="input-group">
-                    <label>Name</label>
-                    <input type="text" id="name" placeholder="Name" required>
-                </div>
+            <div class="contact-form-container">
+                <form>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="e.g. Quaid Azam" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="proviperx0@gmail.com" required>
+                        </div>
+                    </div>
 
-                <div class="input-group">
-                    <label>Email</label>
-                    <input type="email" id="email" placeholder="Email" required>
-                </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+92 (000) 000-0000">
+                        </div>
+                        <div class="input-group">
+                            <label>Interested Brand</label>
+                            <select>
+                                <option value="general">General Inquiry</option>
+                                <option value="leo">LEO Series</option>
+                                <option value="aura">AURA Collection</option>
+                                <option value="zenith">ZENITH Ergonomics</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <div class="input-group">
-                    <label>Subject</label>
-                    <input type="text" id="subject" placeholder="Subject" required>
-                </div>
+                    <div class="input-group">
+                        <label>Your Project Brief</label>
+                        <textarea placeholder="Tell us about your space or requirements..."></textarea>
+                    </div>
 
-                <div class="input-group">
-                    <label>Create a message here</label>
-                    <textarea id="message" rows="4" placeholder="Message" required></textarea>
-                </div>
-
-                <button type="submit" class="contact-send-btn">Send Message</button>
-            </form>
-
-            <div class="contact-social-links">
-                <h3>Follow us here</h3>
-                <a href="#">FACEBOOK</a>
-                <a href="#">TWITTER</a>
-                <a href="#">INSTAGRAM</a>
+                    <button type="submit" class="submit-btn">Initialize Connection</button>
+                </form>
             </div>
         </div>
 
-        <div class="contact-image-section"></div>
+        <div class="map-section">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.3975061661!2d-74.11976373095346!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1706820000000!5m2!1sen!2s"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
+    <footer class="site-footer">
+        <div class="footer-grid">
             <div class="footer-col">
-                <h3>CHAIR<span>HUB</span></h3>
-                <p>Premium quality chairs for your home and office. Comfort and style delivered to your doorstep.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
+                <a href="#" class="logo">CHAIR<span>CO.</span></a>
+                <p style="margin-top:20px;">Premium artisan furniture designed for the modern home. Merging aesthetic
+                    beauty with unparalleled ergonomic support.</p>
             </div>
-
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h4>Explore</h4>
                 <ul>
+                    <li><a href="#card">Collections</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
-                    <li><a href="#">Shop Now</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Offers</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4>Support</h4>
                 <ul>
                     <li><a href="./faqs.html">FAQs</a></li>
-                    <li><a href="./shipingPolicy.html">Shipping Policy</a></li>
-                    <li><a href="./return.html">Returns</a></li>
-                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shop Policy</a></li>
                 </ul>
             </div>
-
-            <div class="footer-col">
-                <h4>Join Our Newsletter</h4>
-                <div class="newsletter">
-                    <input type="email" placeholder="Your Email">
-                    <button type="submit">Join</button>
-                </div>
-                <p class="payment-text">We accept all major cards</p>
-            </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2026 ChairHub. All Rights Reserved | Designed by You</p>
+            &copy; 2026 ChairCo. All Rights Reserved.
         </div>
     </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./js/nav-foot.js"></script>
 </body>
 
 </html>

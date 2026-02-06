@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Chair Collection</title>
+    <link rel="stylesheet" href="./css/cardSearch.css">
+</head>
+
+<body>
+
+    <h2>Our Premium Collections</h2>
+
+    <div class="controls">
+        <input type="text" id="searchField" placeholder="Search for a chair..." onkeyup="runFilters()">
+        <div class="filter-buttons" id="btnContainer">
+            <button class="btn active" onclick="setCategory('all', this)">All Brands</button>
+            <button class="btn" onclick="setCategory('leo', this)">Leo</button>
+            <button class="btn" onclick="setCategory('herman miller', this)">Herman Miller</button>
+            <button class="btn" onclick="setCategory('steelcase', this)">Steelcase</button>
+        </div>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+        <div class="card" data-brand="leo" data-price="$899" data-material="Premium Leather" data-warranty="10 Years"
+            data-weight="25kg">
+            <div class="card-container">
+                <div class="comparison-checkbox">
+                    <input type="checkbox" onchange="toggleComparison(this, 'LEO Executive Pro')">
+                </div>
+                <div class="info-header">
+                    <span class="category">Leo</span>
+                    <span class="model-no">CH-2026</span>
+                </div>
+                <div class="image-box">
+                    <img src="https://i.imgur.com/7989F5s.png" alt="Office Chair">
+                </div>
+                <div class="footer">
+                    <h3 class="product-title">Executive Pro</h3>
+                    <div class="price-row"><span class="price">$899</span></div>
+                    <div class="action-bar">
+                        <button class="action-btn">Customize</button>
+                        <button class="action-btn">Add to Bag</button>
+                    </div>
+                </div>
+                <div class="accent-bar"></div>
+            </div>
+        </div>
+
+        <div class="card" data-brand="herman miller" data-price="$1,495" data-material="Pellicle Mesh"
+            data-warranty="12 Years" data-weight="21kg">
+            <div class="card-container">
+                <div class="comparison-checkbox">
+                    <input type="checkbox" onchange="toggleComparison(this, 'Aeron Remastered')">
+                </div>
+                <div class="info-header">
+                    <span class="category">Herman Miller</span>
+                    <span class="model-no">CH-AERON</span>
+                </div>
+                <div class="image-box">
+                    <img src="https://i.imgur.com/7989F5s.png" alt="Office Chair">
+                </div>
+                <div class="footer">
+                    <h3 class="product-title">Aeron Remastered</h3>
+                    <div class="price-row"><span class="price">$1,495</span></div>
+                    <div class="action-bar">
+                        <button class="action-btn">Customize</button>
+                        <button class="action-btn">Add to Bag</button>
+                    </div>
+                </div>
+                <div class="accent-bar"></div>
+            </div>
+        </div>
+
+        <div class="card" data-brand="steelcase" data-price="$1,099" data-material="Fabric or Leather"
+            data-warranty="12 Years" data-weight="24kg">
+            <div class="card-container">
+                <div class="comparison-checkbox">
+                    <input type="checkbox" onchange="toggleComparison(this, 'Steelcase Leap V2')">
+                </div>
+                <div class="info-header">
+                    <span class="category">Steelcase</span>
+                    <span class="model-no">CH-LEAP</span>
+                </div>
+                <div class="image-box">
+                    <img src="https://i.imgur.com/7989F5s.png" alt="Office Chair">
+                </div>
+                <div class="footer">
+                    <h3 class="product-title">Leap V2</h3>
+                    <div class="price-row"><span class="price">$1,099</span></div>
+                    <div class="action-bar">
+                        <button class="action-btn">Customize</button>
+                        <button class="action-btn">Add to Bag</button>
+                    </div>
+                </div>
+                <div class="accent-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="comparisonBar" class="comparison-bar">
+        <span id="comparisonCount">0 chairs selected for comparison</span>
+        <button class="view-btn" onclick="goToComparisonPage()">View Comparison</button>
+    </div>
+
+    <script src="./js/cardSearch.js"></script>
+</body>
+
+</html>
