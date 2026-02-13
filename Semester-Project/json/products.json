@@ -1,16 +1,321 @@
 [
   {
-    "name": "Harvest Vase",
-    "author": "by studio and friends",
-    "description": "Harvest Vases are a reinterpretation of peeled fruits and vegetables as functional objects.",
-    "price": "78",
-    "image": "https://i.postimg.cc/W30ZbJym/product-img.png"
+    "id": "SC-LP-V2",
+    "brand": "Steelcase",
+    "brand_id": "steelcase",
+    "model": "Leap V2",
+    "sku": "CH-LEAP-V2",
+    "price": 1099.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Fabric or Leather",
+      "warranty": "12 Years",
+      "weight_kg": 24,
+      "max_capacity_lb": 400
+    },
+    "features": [
+      "LiveBack Tech",
+      "4D Arms",
+      "Natural Glide System"
+    ],
+    "image": "https://i.imgur.com/7989F5s.png",
+    "theme_color": "#000000"
   },
   {
-    "name": "Cedar Bowl",
-    "author": "by woodworks inc",
-    "description": "Hand-carved cedar bowls perfect for any rustic dining setting.",
-    "price": "45",
-    "image": "https://via.placeholder.com/327x420"
+    "id": "HM-AR-01",
+    "brand": "Herman Miller",
+    "brand_id": "herman-miller",
+    "model": "Aeron Remastered",
+    "sku": "HM-AERON-RM",
+    "price": 1460.00,
+    "currency": "USD",
+    "specs": {
+      "material": "8Z Pellicle Mesh",
+      "warranty": "12 Years",
+      "weight_kg": 18,
+      "max_capacity_lb": 350
+    },
+    "features": [
+      "PostureFit SL",
+      "Breathable Mesh",
+      "Harmonic Tilt"
+    ],
+    "image": "https://i.imgur.com/example-aeron.png",
+    "theme_color": "#CF102D"
+  },
+  {
+    "id": "HW-FN-DK",
+    "brand": "Haworth",
+    "brand_id": "haworth",
+    "model": "Fern",
+    "sku": "HW-FERN-001",
+    "price": 1470.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Digital Knit",
+      "warranty": "12 Years",
+      "weight_kg": 25,
+      "max_capacity_lb": 325
+    },
+    "features": [
+      "Stem Architecture",
+      "Frond Support",
+      "4-Stage Tilt"
+    ],
+    "image": "https://i.imgur.com/example-fern.png",
+    "theme_color": "#FFC627"
+  },
+  {
+    "id": "HS-FR-HR",
+    "brand": "Humanscale",
+    "brand_id": "humanscale",
+    "model": "Freedom Headrest",
+    "sku": "HS-FREE-HR",
+    "price": 1549.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Sensuede/Leather",
+      "warranty": "15 Years",
+      "weight_kg": 22,
+      "max_capacity_lb": 300
+    },
+    "features": [
+      "Self-Adjusting Recline",
+      "Synchronous Armrests"
+    ],
+    "image": "https://i.imgur.com/example-freedom.png",
+    "theme_color": "#002D72"
+  },
+  {
+    "id": "SC-GS-4D",
+    "brand": "Steelcase",
+    "brand_id": "steelcase",
+    "model": "Gesture",
+    "sku": "CH-GEST-V1",
+    "price": 1499.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Durable Textile",
+      "warranty": "12 Years",
+      "weight_kg": 35,
+      "max_capacity_lb": 400
+    },
+    "features": [
+      "360-Degree Arms",
+      "Core Equalizer",
+      "Cradle Design"
+    ],
+    "image": "https://i.imgur.com/example-gesture.png",
+    "theme_color": "#000000"
+  },
+  {
+    "id": "HM-EM-01",
+    "brand": "Herman Miller",
+    "brand_id": "herman-miller",
+    "model": "Embody",
+    "sku": "HM-EMB-G",
+    "price": 2110.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Sync Fabric",
+      "warranty": "12 Years",
+      "weight_kg": 23,
+      "max_capacity_lb": 300
+    },
+    "features": [
+      "Pixelated Support",
+      "Backfit Adjustment"
+    ],
+    "image": "https://i.imgur.com/example-embody.png",
+    "theme_color": "#CF102D"
+  },
+  {
+    "id": "HW-SJ-02",
+    "brand": "Haworth",
+    "brand_id": "haworth",
+    "model": "Soji",
+    "sku": "HW-SOJI-M",
+    "price": 652.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Mesh/Fabric Blend",
+      "warranty": "12 Years",
+      "weight_kg": 21,
+      "max_capacity_lb": 325
+    },
+    "features": [
+      "Synchro-Tilt",
+      "Adjustable Lumbar"
+    ],
+    "image": "https://i.imgur.com/example-soji.png",
+    "theme_color": "#FFC627"
+  },
+  {
+    "id": "LEO-HB-X",
+    "brand": "Leo",
+    "brand_id": "leo",
+    "model": "Pro High-Back",
+    "sku": "LEO-PHB-88",
+    "price": 349.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Nylon Mesh",
+      "warranty": "5 Years",
+      "weight_kg": 16,
+      "max_capacity_lb": 275
+    },
+    "features": [
+      "Waterfall Seat",
+      "Breathable Mesh"
+    ],
+    "image": "https://i.imgur.com/example-leo.png",
+    "theme_color": "#53565A"
+  },
+  {
+    "id": "SC-AM-01",
+    "brand": "Steelcase",
+    "brand_id": "steelcase",
+    "model": "Amia",
+    "sku": "CH-AMIA-LX",
+    "price": 987.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Polyester Blend",
+      "warranty": "12 Years",
+      "weight_kg": 22,
+      "max_capacity_lb": 400
+    },
+    "features": [
+      "LiveLumbar Tech",
+      "Adjustable Seat Depth"
+    ],
+    "image": "https://i.imgur.com/example-amia.png",
+    "theme_color": "#000000"
+  },
+  {
+    "id": "HS-LB-T",
+    "brand": "Humanscale",
+    "brand_id": "humanscale",
+    "model": "Liberty Task",
+    "sku": "HS-LIB-01",
+    "price": 1219.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Tri-Panel Mesh",
+      "warranty": "15 Years",
+      "weight_kg": 12,
+      "max_capacity_lb": 300
+    },
+    "features": [
+      "Automatic Recline",
+      "Pivoting Backrest"
+    ],
+    "image": "https://i.imgur.com/example-liberty.png",
+    "theme_color": "#002D72"
+  },
+  {
+    "id": "HM-SY-01",
+    "brand": "Herman Miller",
+    "brand_id": "herman-miller",
+    "model": "Sayl",
+    "sku": "HM-SAYL-W",
+    "price": 775.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Elastomer Mesh",
+      "warranty": "12 Years",
+      "weight_kg": 17,
+      "max_capacity_lb": 350
+    },
+    "features": [
+      "3D Intelligent Back",
+      "Eco-Dematerialized"
+    ],
+    "image": "https://i.imgur.com/example-sayl.png",
+    "theme_color": "#CF102D"
+  },
+  {
+    "id": "HW-ZD-02",
+    "brand": "Haworth",
+    "brand_id": "haworth",
+    "model": "Zody II",
+    "sku": "HW-ZODY-2",
+    "price": 1183.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Moulded Foam/Mesh",
+      "warranty": "12 Years",
+      "weight_kg": 19,
+      "max_capacity_lb": 325
+    },
+    "features": [
+      "Asymmetrical Lumbar",
+      "Pelvic Support"
+    ],
+    "image": "https://i.imgur.com/example-zody.png",
+    "theme_color": "#FFC627"
+  },
+  {
+    "id": "SC-S1-01",
+    "brand": "Steelcase",
+    "brand_id": "steelcase",
+    "model": "Series 1",
+    "sku": "CH-SER1-S",
+    "price": 499.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Micro-knit Mesh",
+      "warranty": "12 Years",
+      "weight_kg": 15,
+      "max_capacity_lb": 300
+    },
+    "features": [
+      "Integrated LiveBack",
+      "Compact Profile"
+    ],
+    "image": "https://i.imgur.com/example-series1.png",
+    "theme_color": "#000000"
+  },
+  {
+    "id": "LEO-LX-01",
+    "brand": "Leo",
+    "brand_id": "leo",
+    "model": "Lux Executive",
+    "sku": "LEO-LUX-09",
+    "price": 450.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Bonded Leather",
+      "warranty": "3 Years",
+      "weight_kg": 20,
+      "max_capacity_lb": 250
+    },
+    "features": [
+      "Padded Armrests",
+      "Tilt Lock"
+    ],
+    "image": "https://i.imgur.com/example-lux.png",
+    "theme_color": "#53565A"
+  },
+  {
+    "id": "HM-V-01",
+    "brand": "Herman Miller",
+    "brand_id": "herman-miller",
+    "model": "Verus",
+    "sku": "HM-VER-T",
+    "price": 695.00,
+    "currency": "USD",
+    "specs": {
+      "material": "Triflex/Mesh",
+      "warranty": "12 Years",
+      "weight_kg": 16,
+      "max_capacity_lb": 350
+    },
+    "features": [
+      "Interweave 2 Suspension",
+      "Sacral Support"
+    ],
+    "image": "https://i.imgur.com/example-verus.png",
+    "theme_color": "#CF102D"
   }
 ]

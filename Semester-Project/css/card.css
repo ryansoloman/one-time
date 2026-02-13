@@ -16,157 +16,133 @@ body {
 
 .card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     padding: 40px;
 }
 
 /* --- THE CARD --- */
-.product-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--blur));
-    -webkit-backdrop-filter: blur(var(--blur));
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
+.card-container {
+    position: relative;
     width: 320px;
-    /* Default width for desktop */
+    height: 520px;
+    background: var(--surface);
+    border: 1px solid var(--border);
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    position: relative;
+    transition: 0.4s ease;
 }
 
-.product-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+.card-container:hover {
+    border-color: #444;
 }
 
-/* Image Container */
-.img-container {
-    width: 100%;
-    height: 280px;
-    overflow: hidden;
-    background: #111;
-    position: relative;
-}
-
-.img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.product-card:hover img {
-    transform: scale(1.1);
-}
-
-/* Badge (Brand Name) */
-.brand-badge {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    color: var(--accent);
-    padding: 5px 12px;
-    border-radius: 30px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid var(--glass-border);
-}
-
-/* Content Area */
-.product-info {
+.info-header {
     padding: 25px;
-}
-
-.product-info h3 {
-    color: white;
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    font-weight: 700;
-}
-
-.product-info p {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-/* Price & CTA Row */
-.card-footer {
     display: flex;
     justify-content: space-between;
+}
+
+.category {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.model-no {
+    font-size: 10px;
+    color: #444;
+}
+
+.image-box {
+    width: 100%;
+    height: 240px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.price {
+.image-box img {
+    max-width: 75%;
+    transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.card-container:hover img {
+    transform: scale(1.1) translateY(-10px);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    background: var(--surface);
+}
+
+.product-title {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 500;
     color: white;
-    font-size: 1.25rem;
-    font-weight: 800;
 }
 
-.price span {
-    color: var(--accent);
-    font-size: 0.9rem;
-    margin-right: 2px;
+.price {
+    color: #888;
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 8px;
 }
 
-.buy-btn {
-    background: white;
-    color: black;
-    padding: 12px 20px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-    transition: 0.3s;
+.action-bar {
+    height: 0;
+    opacity: 0;
+    display: flex;
+    gap: 1px;
+    background: var(--border);
+    margin-top: 0;
+    transition: 0.4s ease;
+}
+
+.card-container:hover .action-bar {
+    height: 45px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.action-btn {
+    flex: 1;
+    background: #151515;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
     text-transform: uppercase;
 }
 
-.buy-btn:hover {
+.action-btn:hover {
     background: var(--accent);
-    color: white;
+    color: black;
+}
+
+.accent-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent);
+    transition: 0.6s ease;
+}
+
+.card-container:hover .accent-bar {
+    width: 100%;
 }
 
 .card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    padding: 80px 40px;
-    background: transparent;
-    position: relative;
-    z-index: 10;
-    margin-top: 0 !important;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(100px) scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.product-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--blur));
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    view-timeline-name: --card-fade;
-    view-timeline-axis: block;
-    animation-timeline: --card-fade;
-    animation-name: fadeInUp;
-    animation-range: entry 10% cover 30%;
-    animation-fill-mode: both;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 

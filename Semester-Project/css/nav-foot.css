@@ -6,7 +6,7 @@
     --blur-amount: 20px;
     --bg-dark: #0a0a0a;
     --island-bg: rgba(28, 28, 30, 0.85);
-    --accent: #e63946;
+    /* --accent: #e63946; */
     --text: #ffffff;
     --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -21,7 +21,7 @@
 body {
     background-color: var(--bg-dark);
     color: var(--text);
-    height: 250vh;
+    /* height: 250vh; */
 }
 
 /* --- NAV CONTAINER --- */
@@ -48,8 +48,7 @@ body {
 }
 
 .scrolled .navbar {
-    width: 750px;
-    /* Slightly wider 'Island' */
+    width: 800px;
     background: var(--island-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -57,6 +56,7 @@ body {
     padding: 0.7rem 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
 }
 
 .logo {
@@ -79,10 +79,6 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--text);
 }
 
 .auth-buttons {
@@ -134,6 +130,47 @@ section.reveal {
     transform: translateY(0);
 }
 
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-links li a.active::after {
+    width: 100%;
+}
+
 /* Navbar End */
 
 
@@ -146,7 +183,6 @@ section.reveal {
     --blur: 25px;
 }
 
-/* --- PROFESSIONAL FOOTER --- */
 .site-footer {
     background: rgba(0, 0, 0, 0.02);
     border-top: 1px solid var(--glass-border);
@@ -217,7 +253,7 @@ section.reveal {
     }
 }
 
-/* --- MOBILE GLOSS FIX --- */
+/* --- MOBILE --- */
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
@@ -226,7 +262,6 @@ section.reveal {
         padding: 0 20px;
         border-right: none;
         border-bottom: 1px solid var(--glass-border);
-        /* Ensure gloss is active on mobile header */
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
@@ -237,7 +272,6 @@ section.reveal {
         height: 60px;
         padding-top: 10px;
         background: rgba(0, 0, 0, 0.2);
-        /* Slight darken for contrast on scroll */
     }
 
     .nav-links,
@@ -256,13 +290,12 @@ section.reveal {
         padding-top: 80px;
     }
 
-    /* The Mobile Open Glossy State */
+    /* The Mobile Open State */
     .sidebar.mobile-open {
         height: 100vh;
         flex-direction: column;
         justify-content: center;
         gap: 40px;
-        /* This is the key fix: Semi-transparent background with blur */
         background: rgba(10, 10, 10, 0.7);
         backdrop-filter: blur(25px);
         -webkit-backdrop-filter: blur(25px);
@@ -293,7 +326,7 @@ section.reveal {
     }
 }
 
-/* Responsive Adjustment */
+/* Responsive */
 @media (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr;

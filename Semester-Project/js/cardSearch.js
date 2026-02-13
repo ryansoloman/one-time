@@ -1,33 +1,94 @@
+let allProducts = [];
 let currentCategory = 'all';
 let selectedChairs = [];
 
+async function init() {
+    try {
+        // Points to your json folder
+        const response = await fetch('./json/products.json');
+
+        if (!response.ok) {
+            throw new Error(`Could not find products.json (Status: ${response.status})`);
+        }
+
+        allProducts = await response.json();
+        renderCards(allProducts);
+    } catch (error) {
+        console.error("Error loading products:", error);
+        document.getElementById('productGrid').innerHTML = `<p style="color:white; text-align:center; grid-column: 1/-1;">Error: Check your file path or Live Server.</p>`;
+    }
+}
+
+function renderCards(products) {
+    const grid = document.getElementById('productGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        card.setAttribute('data-brand', product.brand_id);
+        card.setAttribute('data-price', `$${product.price.toLocaleString()}`);
+        card.setAttribute('data-material', product.specs.material);
+        card.setAttribute('data-warranty', product.specs.warranty);
+        card.setAttribute('data-weight', `${product.specs.weight_kg}kg`);
+
+        card.innerHTML = `
+            <div class="card-container">
+                <div class="comparison-checkbox">
+                    <input type="checkbox" onchange="toggleComparison(this, '${product.model}')">
+                </div>
+                <div class="info-header">
+                    <span class="category">${product.brand}</span>
+                    <span class="model-no">${product.sku}</span>
+                </div>
+                <div class="image-box">
+                    <img src="${product.image}" alt="${product.model}" onerror="this.src='https://via.placeholder.com/300?text=Image+Coming+Soon'">
+                </div>
+                <div class="footer">
+                    <h3 class="product-title">${product.model}</h3>
+                    <div class="price-row">
+                        <span class="price">$${product.price.toLocaleString()}</span>
+                    </div>
+                    <div class="action-bar">
+                        <button class="action-btn">Customize</button>
+                        <button class="action-btn">Add to Bag</button>
+                    </div>
+                </div>
+                <div class="accent-bar"></div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
 function setCategory(cat, btn) {
-    let buttons = document.getElementsByClassName("btn");
-    for (let b of buttons) { b.classList.remove("active"); }
+    const buttons = document.querySelectorAll(".btn");
+    buttons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     currentCategory = cat;
     runFilters();
 }
 
 function runFilters() {
-    let searchInput = document.getElementById("searchField").value.toLowerCase();
-    let cards = document.getElementsByClassName("card");
+    const searchInput = document.getElementById("searchField").value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
 
-    for (let card of cards) {
-        let title = card.querySelector("h3").innerText.toLowerCase();
-        let brand = card.getAttribute("data-brand");
-        let matchCategory = (currentCategory === 'all' || brand === currentCategory);
-        let matchSearch = title.includes(searchInput);
+    cards.forEach(card => {
+        const title = card.querySelector("h3").innerText.toLowerCase();
+        const brand = card.getAttribute("data-brand");
+        const matchCategory = (currentCategory === 'all' || brand === currentCategory);
+        const matchSearch = title.includes(searchInput);
         card.style.display = (matchCategory && matchSearch) ? "block" : "none";
-    }
+    });
 }
 
-// Comparison Selection Logic
 function toggleComparison(checkbox, title) {
     const card = checkbox.closest('.card');
     const chairData = {
         title: title,
-        brand: card.getAttribute('data-brand'),
+        brand: card.querySelector('.category').innerText,
         price: card.getAttribute('data-price'),
         material: card.getAttribute('data-material'),
         warranty: card.getAttribute('data-warranty'),
@@ -50,12 +111,9 @@ function toggleComparison(checkbox, title) {
 function updateComparisonUI() {
     const bar = document.getElementById('comparisonBar');
     const countText = document.getElementById('comparisonCount');
-    countText.innerText = `${selectedChairs.length} chair(s) selected for comparison`;
-
-    if (selectedChairs.length > 0) {
-        bar.classList.add('active');
-    } else {
-        bar.classList.remove('active');
+    if (countText) countText.innerText = `${selectedChairs.length} chair(s) selected for comparison`;
+    if (bar) {
+        selectedChairs.length > 0 ? bar.classList.add('active') : bar.classList.remove('active');
     }
 }
 
@@ -63,3 +121,5 @@ function goToComparisonPage() {
     localStorage.setItem('selectedChairs', JSON.stringify(selectedChairs));
     window.location.href = 'comparison.html';
 }
+
+init();

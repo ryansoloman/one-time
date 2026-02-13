@@ -1,39 +1,115 @@
-.comp-container {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
+:root {
+    --card-bg: #0d0d0d;
+}
 
-        .back-link {
-            color: var(--accent);
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
+body {
+    padding: 40px 20px;
+    background-color: #000;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background: #0a0a0a;
-        }
+.comparison-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        th,
-        td {
-            padding: 20px;
-            border: 1px solid #222;
-            text-align: left;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
 
-        th {
-            color: var(--accent);
-            text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 1px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -1px;
+}
 
-        .feature-col {
-            width: 200px;
-            font-weight: bold;
-            background: #111;
-        }
+.back-btn {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    opacity: 0.7;
+}
+
+/* Table Styling */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* Maintains equal column widths */
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 25px;
+    border: 1px solid var(--border);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Feature Labels Column */
+.feature-label {
+    width: 180px;
+    text-align: left !important;
+    background-color: #050505;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+/* Product Header Cells */
+.product-header-cell {
+    background-color: var(--card-bg);
+}
+
+.product-img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.remove-btn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #666;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 10px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.spec-value {
+    font-size: 1rem;
+    color: #eee;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 100px 0;
+    color: #444;
+}

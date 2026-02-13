@@ -13,30 +13,24 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="sidebar" id="sidebar">
-        <a href="#" class="logo">CHAIR<span>CO.</span></a>
+    <div class="nav-wrapper" id="islandContainer">
+        <nav class="navbar">
+            <div class="logo">RICHFIELD.</div>
 
-        <div class="burger-icon" id="menuBtn">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
-                stroke-linecap="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./cardSearch.html">Furniture</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
 
-        <ul class="nav-links">
-            <li class="nav-item" style="--i:1"><a href="./index.html" class="nav-link">Home</a></li>
-            <li class="nav-item" style="--i:2"><a href="./furniture.html" class="nav-link">Furniture</a></li>
-            <li class="nav-item" style="--i:3"><a href="./aboutus.html" class="nav-link">About Us</a></li>
-            <li class="nav-item" style="--i:4"><a href="./contact.html" class="nav-link">Contact</a></li>
-        </ul>
-
-        <div class="auth-group">
-            <a href="./login.html" class="login-btn">Log In</a>
-            <a href="./signup.html" class="signup-btn">Sign Up</a>
-        </div>
-    </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn-login">Log In</a>
+                <a href="#" class="btn-signup">Sign Up</a>
+                <div class="mobile-btn" id="mobileMenu">☰</div>
+            </div>
+        </nav>
+    </div>
 
     <!-- Contact Section -->
     <div class="contact-container">
@@ -121,7 +115,7 @@
             <div class="footer-col">
                 <h4>Explore</h4>
                 <ul>
-                    <li><a href="#card">Collections</a></li>
+                    <li><a href="./cardSearch.html">Collections</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>

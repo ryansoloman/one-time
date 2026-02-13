@@ -1,11 +1,12 @@
-
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
     // 1. DYNAMIC ISLAND SCROLL LOGIC
-    $(window).on('scroll', function () {
-        if ($(window).scrollTop() > 60) {
-            $('#islandContainer').addClass('scrolled');
+    const island = document.querySelector('#islandContainer');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+            island.classList.add('scrolled');
         } else {
-            $('#islandContainer').removeClass('scrolled');
+            island.classList.remove('scrolled');
         }
     });
 
@@ -13,7 +14,7 @@ $(document).ready(function () {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                $(entry.target).addClass('reveal');
+                entry.target.classList.add('reveal');
             }
         });
     }, { threshold: 0.2 });
@@ -21,10 +22,25 @@ $(document).ready(function () {
     document.querySelectorAll('section').forEach(section => observer.observe(section));
 
     // 3. SMOOTH SCROLLING
-    $('a[href^="#"]').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $(this.hash).offset().top - 100
-        }, 800);
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const offset = 100;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = targetElement.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
