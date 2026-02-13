@@ -1,115 +1,61 @@
 :root {
-    --card-bg: #0d0d0d;
+    --gold: #d4af37;
+    --dark-grey: #1a1a1a;
+    --border-color: #333;
 }
 
-body {
-    padding: 40px 20px;
-    background-color: #000;
-}
-
-.comparison-wrapper {
+.comp-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 120px auto;
+    padding: 0 40px;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 50px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: -1px;
-}
-
-.back-btn {
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.back-btn:hover {
-    opacity: 0.7;
-}
-
-/* Table Styling */
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
-    /* Maintains equal column widths */
-}
-
-.comparison-table th,
-.comparison-table td {
-    padding: 25px;
-    border: 1px solid var(--border);
-    text-align: center;
-    vertical-align: middle;
-}
-
-/* Feature Labels Column */
-.feature-label {
-    width: 180px;
-    text-align: left !important;
     background-color: #050505;
-    color: #666;
+    border: 1px solid var(--border-color);
+    margin-top: 30px;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.comparison-table thead th {
+    background-color: #0d0d0d;
+    color: var(--gold);
+    font-size: 1.2rem;
     text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: bold;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
-/* Product Header Cells */
-.product-header-cell {
-    background-color: var(--card-bg);
+.feature-label {
+    background-color: #0a0a0a !important;
+    color: #777 !important;
+    font-weight: 600;
+    width: 200px;
 }
 
-.product-img {
-    width: 120px;
-    height: auto;
-    margin-bottom: 15px;
+.price-value {
+    color: var(--gold);
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
-.product-name {
-    display: block;
-    font-size: 1.1rem;
-    color: var(--accent);
-    margin-bottom: 10px;
-}
-
-.remove-btn {
+.deselect-btn {
     background: transparent;
-    border: 1px solid #333;
-    color: #666;
-    padding: 5px 12px;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    padding: 10px 20px;
     cursor: pointer;
-    font-size: 10px;
-    text-transform: uppercase;
-    transition: 0.3s;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-.remove-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-.spec-value {
-    font-size: 1rem;
-    color: #eee;
-}
-
-.empty-state {
-    text-align: center;
-    padding: 100px 0;
-    color: #444;
+.deselect-btn:hover {
+    background: #ff4d4d;
+    color: white;
 }
